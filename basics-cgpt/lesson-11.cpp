@@ -37,11 +37,15 @@ int main(){
 using namespace std;
 
 int calculateRemainingBattery(int battery, int distance){
-    return battery - (distance/10)*2;
+    int remaining = battery - (distance/10) * 2 ;
+    if (remaining < 0){
+        remaining = 0;
+    }
+    return remaining;
 }
 
 int main(){
-    int result = calculateRemainingBattery(100,20);
+    int result = calculateRemainingBattery(100,3000);
     cout << result << endl;
 
     return 0;
