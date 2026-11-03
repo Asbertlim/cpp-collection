@@ -2,10 +2,4 @@
 
 
 ---
-
-***
-
-___
-
-
 A collection of all C++ codes I write.
