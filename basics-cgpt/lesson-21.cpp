@@ -2,6 +2,7 @@
 
 Servo myServo;
 
+const int ledPin = 7;
 const int trigPin = 10;
 const int echoPin = 11;
 
@@ -10,6 +11,7 @@ void setup() {
 
     pinMode(trigPin, OUTPUT);
     pinMode(echoPin, INPUT);
+  	pinMode(ledPin, OUTPUT);
 
     myServo.attach(12);
 }
@@ -53,12 +55,15 @@ void loop() {
 
 	if (centreDistance >= 20) {
     	Serial.println("MOVE FORWARD");
+      	digitalWrite(ledPin, LOW);
 	}
 	else if (leftDistance > rightDistance) {
     	Serial.println("TURN LEFT");
+      	digitalWrite(ledPin, HIGH);
 	}
 	else {
     	Serial.println("TURN RIGHT");
+      	digitalWrite(ledPin, HIGH);
 	} 
 
 
